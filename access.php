@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include 'includes/dbConnection.php';
 if (!$_SESSION["user_name_loggedIn_admin"]) {
@@ -82,7 +82,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                     });
                 </script>
                 <section class="content">
-                    <br>
+
                     <div class="col-md-12 box box-default">
                         <div class="box-header">
                             <section class="content-header">
@@ -97,9 +97,9 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                             <form name="student_form" action="" method="post" class="form-horizontal" id="access_right_form">
                                 <div class="row">
                                     <div class="col-md-2 col-sm-3 col-xs-3 ">Menu</div>
+                                    <div class="col-md-2 col-sm-3 col-xs-3 text-center">Admin</div>
+                                    <div class="col-md-2 col-sm-3 col-xs-3 text-center">Staff</div>
                                     <div class="col-md-2 col-sm-3 col-xs-3 text-center">Member</div>
-                                    <div class="col-md-2 col-sm-3 col-xs-3 text-center">Staff Member</div>
-                                    <div class="col-md-2 col-sm-3 col-xs-3 text-center">Accountant</div>
 
                                 </div>
                                 <hr>
@@ -108,7 +108,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
                                         <div class="col-md-2 col-sm-3 col-xs-5 ">
                                             <span class="menu-label">
-                                                Staff Member </span>
+                                                Staff </span>
                                         </div>
                                         <div class="col-md-2 col-sm-3 col-xs-2">
                                             <div class="checkbox text-center">
@@ -845,4 +845,4 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
     </div>
 </body>
 
-</html> 
+</html>

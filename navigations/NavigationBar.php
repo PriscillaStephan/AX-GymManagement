@@ -54,6 +54,9 @@
                 <i class="fas fa-envelope"></i>
                 <span class="badge badge-danger"></span>
             </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown" style="background-color: #212529;">
+                <a class="dropdown-item" style="color: #909294;" href="settings.php">New message</a>
+                <div class="dropdown-divider"></div>
             </div>
         </li>
         <li class="nav-item dropdown no-arrow">
@@ -62,9 +65,8 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown" style="background-color: #212529;">
                 <a class="dropdown-item" style="color: #909294;" href="settings.php">Settings</a>
-                <a class="dropdown-item" style="color: #909294;" href="#">Activity Log</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" style="color: #909294;" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                <a class="dropdown-item" style="color: #909294;" data-toggle="modal" data-target="#logoutModal">Logout</a>
             </div>
         </li>
     </ul>
@@ -178,4 +180,4 @@
 <script src="js/demo/datatables-demo.js"></script>
 <script src="js/demo/chart-area-demo.js"></script>
 
-</html> 
+</html>

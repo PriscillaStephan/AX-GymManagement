@@ -1,10 +1,10 @@
-<?php 
+<?php
 session_start();
 include 'includes/dbConnection.php';
 // for expired session 
 if (!$_SESSION["user_name_loggedIn_admin"]) {
-  $_SESSION["expired_session"] = "Your session has been expired, relog in!";
-  header("Location: index.php");
+    $_SESSION["expired_session"] = "Your session has been expired, relog in!";
+    header("Location: index.php");
 }
 ?>
 
@@ -87,7 +87,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
         }
 
         .container_head {
-            background-color: #009292;
+            background-color: #1db198;
             color: #fff;
             font-size: 28px;
             padding: 10px 1px;
@@ -102,24 +102,24 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
         }
 
         .all_col>div.list_head {
-            background-color: #F6B939;
+            background-color: #ffc107;
             border-right: 1px solid #BDA167;
         }
 
         .to_do_col>div.list_head {
-            background-color: #E27A3F;
+            background-color: #dc3545;
             border-left: 1px solid #EACBB9;
             border-right: 1px solid #421C07;
         }
 
         .progress_col>div.list_head {
-            background-color: #1A95BE;
+            background-color: #0275d8;
             border-left: 1px solid #B7B6D9;
             border-right: 1px solid #0A2742;
         }
 
         .complet_col>div.list_head {
-            background-color: #27AE61;
+            background-color: #27a243;
             border-left: 1px solid #AABEB3;
         }
 
@@ -689,4 +689,4 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
 </body>
 
-</html> 
+</html>
