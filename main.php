@@ -365,7 +365,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                 </div>
                                 <div class="mr-5">New Messages!</div>
                             </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#">
+                            <a class="card-footer text-white clearfix small z-1" href="message.php">
                                 <span class="float-left">View Details</span>
                                 <span class="float-right">
                                     <i class="fas fa-angle-right"></i>
@@ -538,8 +538,19 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                     </div>
                 </div>
             </div>
+
+
             <!---------------------------------------------------------------------------------------->
+
+
         </div>
+
+
+
+
+
+
+
 
         <!-- Demo scripts for this page-->
         <script src="js/demo/datatables-demo.js"></script>

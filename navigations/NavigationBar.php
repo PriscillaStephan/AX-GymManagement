@@ -55,7 +55,7 @@
                 <span class="badge badge-danger"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown" style="background-color: #212529;">
-                <a class="dropdown-item" style="color: #909294;" href="settings.php">New message</a>
+                <a class="dropdown-item" style="color: #909294;">New message</a>
                 <div class="dropdown-divider"></div>
             </div>
         </li>

@@ -25,8 +25,6 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
     <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <?php include 'globalExternals/components.php'; ?>
 
-
-
     <script>
         $(document).ready(function() {
             $(".validateForm").validationEngine(); /* {binded:false} */
@@ -72,10 +70,6 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
     <div id="wrapper">
         <div id="content-wrapper">
             <div class="container-fluid">
-
-                <div class="body-overlay">
-                    <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
-                </div>
                 <script type="text/javascript">
                     $(document).ready(function() {
                         //$(".content-wrapper").css("min-height","1550px");
@@ -86,10 +80,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                     <div class="col-md-12 box box-default">
                         <div class="box-header">
                             <section class="content-header">
-                                <h1>
-                                    <i class="fa fa-key"></i>
-                                    Access Right Settings <small>Access Right</small>
-                                </h1>
+                                <h1> <i class="fa fa-key"></i> Access Right Settings </h1>
                             </section>
                         </div>
                         <hr>
@@ -164,36 +155,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                         </div>
 
                                     </div>
-                                    <!--------Group------------->
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-3 col-xs-5">
-                                            <span class="menu-label">
-                                                Group </span>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="member_group" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="staff_member_group" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
 
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" value="1" name="accountant_group" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                    </div>
                                     <!--------Member------------->
                                     <div class="row">
                                         <div class="col-md-2 col-sm-3 col-xs-5">
@@ -224,36 +186,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                         </div>
 
                                     </div>
-                                    <!--------Activity------------->
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-3 col-xs-5">
-                                            <span class="menu-label">
-                                                Activity </span>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="member_activity" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="staff_member_activity" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
 
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" value="1" name="accountant_activity" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                    </div>
                                     <!--------Class Schedule------------->
                                     <div class="row">
                                         <div class="col-md-2 col-sm-3 col-xs-5">
@@ -314,96 +247,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                         </div>
 
                                     </div>
-                                    <!--------Assigne Workouts------------->
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-3 col-xs-5">
-                                            <span class="menu-label">
-                                                Assigned Workouts </span>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="member_assign-workout" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="staff_member_assign-workout" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
 
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" value="1" name="accountant_assign-workout" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!--------Workouts------------->
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-3 col-xs-5">
-                                            <span class="menu-label">
-                                                Workouts </span>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="member_workouts" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="staff_member_workouts" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" value="1" name="accountant_workouts" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!--------Accountant------------->
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-3 col-xs-5">
-                                            <span class="menu-label">
-                                                Accountant </span>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="member_accountant" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="staff_member_accountant" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="accountant_accountant" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                    </div>
                                     <!--------Payment------------->
                                     <div class="row">
                                         <div class="col-md-2 col-sm-3 col-xs-5">
@@ -463,126 +307,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                             </div>
                                         </div>
                                     </div>
-                                    <!--------Expense------------->
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-3 col-xs-5">
-                                            <span class="menu-label">
-                                                Expense </span>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" disabled value="1" name="member_expense" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" value="1" name="staff_member_expense" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
 
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="accountant_expense" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--------product------------->
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-3 col-xs-5">
-                                            <span class="menu-label">
-                                                Product </span>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" value="1" name="member_product" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="staff_member_product" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="accountant_product" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!--------Store------------->
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-3 col-xs-5">
-                                            <span class="menu-label">
-                                                Store </span>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2 ">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" value="1" name="member_store" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="staff_member_store" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="accountant_store" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!--------News letter------------->
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-3 col-xs-5">
-                                            <span class="menu-label">
-                                                Newsletter </span>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" value="1" name="member_news_letter" readonly="" disabled>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="staff_member_news_letter" readonly="" disabled>
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" value="1" name="accountant_news_letter" readonly="" disabled>
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                    </div>
                                     <!--------Message------------->
                                     <div class="row">
                                         <div class="col-md-2 col-sm-3 col-xs-5">
@@ -673,37 +398,6 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                         </div>
 
                                     </div>
-
-                                    <!--------Nutrition Schedule------------->
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-3 col-xs-5">
-                                            <span class="menu-label">
-                                                Nutrition Schedule </span>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="member_nutrition" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" checked value="1" name="staff_member_nutrition" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-2 col-sm-3 col-xs-2">
-                                            <div class="checkbox text-center">
-                                                <label>
-                                                    <input type="checkbox" value="1" name="accountant_nutrition" readonly="">
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                    </div>
                                     <!--------Event------------->
                                     <div class="row">
                                         <div class="col-md-2 col-sm-3 col-xs-5">
@@ -734,23 +428,24 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                         </div>
 
                                     </div>
-                                    <!--------Account------------->
+
+                                    <!--------Music System------------->
                                     <div class="row">
                                         <div class="col-md-2 col-sm-3 col-xs-5">
                                             <span class="menu-label">
-                                                Account </span>
+                                                Music System </span>
                                         </div>
                                         <div class="col-md-2 col-sm-3 col-xs-2">
                                             <div class="checkbox text-center">
                                                 <label>
-                                                    <input type="checkbox" checked value="1" name="member_account" readonly="">
+                                                    <input type="checkbox" checked value="1" name="member_reservation" readonly="">
                                                 </label>
                                             </div>
                                         </div>
                                         <div class="col-md-2 col-sm-3 col-xs-2">
                                             <div class="checkbox text-center">
                                                 <label>
-                                                    <input type="checkbox" checked value="1" name="staff_member_account" readonly="">
+                                                    <input type="checkbox" checked value="1" name="staff_member_reservation" readonly="">
                                                 </label>
                                             </div>
                                         </div>
@@ -758,13 +453,12 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                         <div class="col-md-2 col-sm-3 col-xs-2">
                                             <div class="checkbox text-center">
                                                 <label>
-                                                    <input type="checkbox" checked value="1" name="accountant_account" readonly="">
+                                                    <input type="checkbox" value="1" checked name="accountant_reservation" readonly="">
                                                 </label>
                                             </div>
                                         </div>
 
                                     </div>
-
                                     <!--------Subscription History------------->
                                     <div class="row">
                                         <div class="col-md-2 col-sm-3 col-xs-5">
@@ -797,42 +491,20 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                 </div>
                                 <br>
 
-                                <div class="col-sm-offset-2 col-sm-8 row_bottom">
-
-                                    <input type="submit" value="Save" name="save_access_right" class="btn btn-flat btn-success">
-                                </div>
-
-
                             </form>
-
-
-
-
-
-
                             <!-- END -->
                         </div>
-                        <div class='overlay gym-overlay'>
-                            <i class='fa fa-refresh fa-spin'></i>
-                        </div>
+
                     </div>
                 </section>
+            </div>
 
-                <div class="modal fade gym-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                    <div class="modal-dialog modal-lg gym-modal">
-                        <div class="modal-content">
-
-                        </div>
-                    </div>
+            <br><br><br>
+            <div class="control-sidebar-bg">
+                <div class="col-sm-offset-2 col-sm-8 row_bottom">
+                    <input type="submit" value="Save Changes" name="save_access_right" style="float:right;" class="btn btn-flat btn-success">
                 </div>
             </div>
-            <footer class="main-footer">
-                <div class="pull-right hidden-xs">
-                    <b>Version</b> 13.0 </div>
-
-                <span>Copyright © 2016-2017. All rights reserved.</span>
-            </footer>
-            <div class="control-sidebar-bg"></div>
         </div>
         <script>
 
