@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include 'includes/dbConnection.php';
 if (!$_SESSION["user_name_loggedIn_admin"]) {
@@ -29,10 +29,14 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
 
     <style>
+        body {
+            background: #1db198;
+        }
+
         section.pricing {
             background: #1db198;
-            margin: 80px;
-            margin-top: 80px;
+            margin: 10px;
+            margin-top: 60px;
 
         }
 
@@ -95,13 +99,6 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
             }
         }
     </style>
-
-    <script>
-
-
-
-    </script>
-
 
 </head>
 
@@ -181,4 +178,4 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
     </div>
 </body>
 
-</html> 
+</html>
