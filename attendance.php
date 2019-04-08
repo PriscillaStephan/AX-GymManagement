@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include 'includes/dbConnection.php';
 // for expired session 
@@ -90,11 +90,8 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                     <section class="content-header">
                                         <h1>
                                             <i class="fa fa-plus"></i>
-                                            Member Attendance <small>Attendance</small>
+                                            Member Attendance
                                         </h1>
-                                        <ol class="breadcrumb">
-                                            <a href="/dasinfoau/php/gym/gym-attendance/staff-attendance" class="btn btn-flat btn-custom"><i class="fa fa-plus"></i> Staff Attendance</a>
-                                        </ol>
                                     </section>
                                 </div>
                                 <hr>
@@ -110,86 +107,81 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
                                             <select name="class_id" class="validation[required] form-control" required="required">
                                                 <option value="">Select Class</option>
-                                                <option value="1">Yoga Class</option>
                                                 <option value="2" selected="selected">Aerobics Class</option>
                                                 <option value="3">HIT Class</option>
                                                 <option value="4">Cardio Class</option>
                                                 <option value="5">Pilates</option>
                                                 <option value="6">Zumba Class</option>
-                                                <option value="7">Power Yoga Class</option>
                                                 <option value="8">CrossFit M</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-3 button-possition">
-                                            <label for="subject_id"></label>
-                                            <input type="submit" value="Take/View Attendance" name="attendence" class="btn btn-flat btn-success">
+                                            <br>
+                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal"> View Attendance</button>
                                         </div>
                                     </form>
-                                    <div class="clearfix"> </div>
-                                    <hr>
-                                    <!-- ###################################################################### -->
-                                    <div class="clearfix"> </div>
-                                    <div class="panel-body">
-                                        <form method="post" class="form-horizontal">
-                                            <input type="hidden" name="class_id" value="2">
-                                            <input type="hidden" name="attendance_date" value="2019-03-01">
-                                            <div class="panel-heading">
-                                                <h4 class="panel-title">
-                                                    Class : Aerobics Class ,
-                                                    Date : March 1, 2019</h4>
-                                            </div>
-                                            <br><br>
-                                            <div class="clearfix"> </div>
-                                            <div class="form-group">
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="status" value="Present" checked="checked">Present</label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="status" value="Absent">Absent<br>
-                                                </label>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th width="70px">Status</th>
-                                                            <th>Photo</th>
-                                                            <th width="250px">Member Name</th>
-                                                            <th>Status</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
 
-                                                        <tr>
-                                                            <td class="checkbox_field"><span><input type="checkbox" class="checkbox1" name="attendance[]" value="3"></span></td>
-                                                            <td><img src="/dasinfoau/php/gym/webroot/upload/1515230374_154185.png" class='membership-img img-circle'></td>
-                                                            <td><span>Alex Johnson(M30618)</span></td>
-                                                            <td>Not Taken </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+
+
+
+                                    <div class="modal fade" id="myModal">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="card card-register">
+
+
+
+                                                    <div class="clearfix"> </div>
+                                                    <hr>
+                                                    <!-- ###################################################################### -->
+                                                    <div class="clearfix"> </div>
+                                                    <div class="panel-body">
+                                                        <form method="post" class="form-horizontal">
+                                                            <input type="hidden" name="class_id" value="2">
+                                                            <input type="hidden" name="attendance_date" value="2019-03-01">
+                                                            <br><br>
+                                                            <div class="clearfix"> </div>
+                                                            <div class="form-group">
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="status" value="Present" checked="checked">Present</label>
+
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <table class="table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th width="70px">Status</th>
+                                                                            <th>Photo</th>
+                                                                            <th width="250px">Member Name</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+
+                                                                        <tr>
+                                                                            <td class="checkbox_field"><span><input type="checkbox" class="checkbox1" name="attendance[]" value="3"></span></td>
+                                                                            <td> <i class="fa fa-user"></i></td>
+                                                                            <td><span>member name</span></td>
+
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <input type="submit" value="Save Attendance" name="save_attendance" class="btn btn-flat btn-success">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
                                             </div>
-                                            <div class="col-sm-12">
-                                                <input type="submit" value="Save Attendance" name="save_attendance" class="btn btn-flat btn-success">
-                                            </div>
-                                        </form>
+                                        </div>
                                     </div>
-
-
                                     <!-- END -->
                                 </div>
-                                <div class='overlay gym-overlay'>
-                                    <i class='fa fa-refresh fa-spin'></i>
-                                </div>
+
                             </div>
                         </section>
 
-                        <div class="modal fade gym-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                            <div class="modal-dialog modal-lg gym-modal">
-                                <div class="modal-content">
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
 
@@ -210,4 +202,4 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
 </body>
 
-</html> 
+</html>

@@ -1,6 +1,4 @@
 /*************************************************** GLOBAL DESIGNS ***************************************************/
-
-
 html {
   font-size: 16px;
 }
@@ -120,31 +118,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   cursor: pointer;
 }
 
-/*table tr th {
-	max-width: 30h0px;
-	padding: 0.5625rem 0.625rem;
-	font-size: 0.875rem;
-	color: #1798A5;
-	text-align: left;
-	border-bottom: 2px solid #1798A5;
-}
-
-table tr th,
-table tr td {
-	color: #222;
-	font-size: 0.875rem;
-	padding: 0.5625rem 0.625rem;
-	text-align: left;
-
-}*/
-
-/*=======================================   End   ==================================================*/
-
-/*=======================================   table   ==================================================*/
-
-/*=======================================   End   ==================================================*/
-
-/****************************************************** MEMBER PAGE ********************************/
+/****************************************************** MANAGEMENT PAGES ********************************/
 
 #member-registration-container {
   width: 100%;
@@ -162,123 +136,6 @@ table tr td {
   font-size: 15px;
 }
 
-/****************************************************** CLUB PAGE ******************************************************/
-
-#manage-clubs {
-  width: 100%;
-  padding: 20px;
-  font-size: 15px;
-}
-
-#manage-clubs button {
-  float: right;
-  width: 120px;
-  margin-top: 0;
-  margin-bottom: 10px;
-  margin-right: 2px;
-  margin-left: 2px;
-  font-size: 15px;
-}
-
-/****************************************************** PAYMENT PAGE ******************************************************/
-
-#payment-container {
-  width: 100%;
-  padding: 20px;
-  font-size: 15px;
-}
-
-#payment-container button {
-  float: right;
-  width: 120px;
-  margin-top: 0;
-  margin-bottom: 10px;
-  margin-right: 2px;
-  margin-left: 2px;
-  font-size: 15px;
-}
-
-/****************************************************** MEMBERSHIP PAGE ******************************************************/
-
-#memberships-container {
-  width: 100%;
-  padding: 20px;
-  font-size: 15px;
-}
-
-#memberships-container button {
-  float: right;
-  width: 150px;
-  margin-top: 0;
-  margin-bottom: 10px;
-  margin-right: 2px;
-  margin-left: 2px;
-  font-size: 15px;
-}
-
-/****************************************************** STAFF PAGE ******************************************************/
-
-#staff-registration {
-  width: 100%;
-  padding: 20px;
-  font-size: 15px;
-}
-
-#staff-registration button {
-  float: right;
-  width: 120px;
-  margin-top: 0;
-  margin-bottom: 10px;
-  margin-right: 2px;
-  margin-left: 2px;
-  font-size: 15px;
-}
-
-/****************************************************** USER PAGE ******************************************************/
-
-#manage-users {
-  width: 100%;
-  padding: 20px;
-  font-size: 15px;
-}
-
-#manage-users button {
-  float: right;
-  width: 120px;
-  margin-top: 0;
-  margin-bottom: 10px;
-  margin-right: 2px;
-  margin-left: 2px;
-  font-size: 15px;
-}
-
-/****************************************************** CHECK IN ******************************************************
-
-#check-in {
-	width: 60%;
-	padding: 20px;
-	margin: 5% auto;
-	font-size: 15px;
-}
-
-#check-in input{
-	margin: 0 auto;
-	width: 80%;
-}
-
-#check-in button{
-	margin: 0 auto;
-	text-align: center;
-	width: 80%;
-}
-
-#check-in h2{
-	text-align: center;
-	font-size: 35px;
-}
-
-
-*****************/
 /********************reports container******************/
 #reports-container {
   margin: 50px;

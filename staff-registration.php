@@ -1,9 +1,9 @@
-<?php 
+<?php
 session_start();
 include 'includes/dbConnection.php';
 if (!$_SESSION["user_name_loggedIn_admin"]) {
-	$_SESSION["expired_session"] = "Your session has been expired, relog in!";
-	header("Location: index.php");
+    $_SESSION["expired_session"] = "Your session has been expired, relog in!";
+    header("Location: index.php");
 }
 ?>
 
@@ -31,182 +31,193 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
     <div id="wrapper">
         <div id="content-wrapper">
             <div class="container-fluid">
-                <div class="container" id="member-registration-container">
-                    <a class="btn btn-primary btn-block" href="#"></a>
-                    <br> <br>
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"><i class="fas fa-plus" style="color: white;"></i> Staff</button>
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#userModal"> <i class="fas fa-user" style="color: white;"></i> New User</button>
-                    <br> <br> <br>
 
-                    <!-- Table with query to fill it -->
-                    <?php $sql = 'SELECT st_id,cl_id,u_id,st_first_name,st_middle_name,st_last_name,st_position, st_telephone,address,st_email,st_dob FROM staff';
-					$query = mysqli_query($con, $sql);
-					if (!$query) {
-						die('SQL Error:' . mysqli_error($con));
-					}
-					?>
-
-                    <!-- DataTables Example -->
-                    <div class="card mb-3">
-                        <div class="card-header"><i class="fas fa-table"></i> Staff List</div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <!-- Table Column Header -->
-                                            <th class="sorting_desc">First Name</th>
-                                            <th class="sorting_desc">Middle Name</th>
-                                            <th class="sorting_desc">Last Name</th>
-                                            <th class="sorting_desc">Position</th>
-                                            <th class="sorting_desc">Address</th>
-                                            <th class="sorting_desc">Telephone</th>
-                                            <th class="sorting_desc">Email</th>
-                                            <th class="sorting_desc">Date of Birth</th>
-                                            <th class="sorting_desc">Action</th>
-                                        </tr>
-                                        <thead>
-                                            <?php while ($row = mysqli_fetch_array($query)) { ?>
-                                            <tr>
-                                                <td><?php echo $row['st_first_name']; ?></td>
-                                                <td><?php echo $row['st_middle_name']; ?></td>
-                                                <td><?php echo $row['st_last_name']; ?></td>
-                                                <td><?php echo $row['st_position']; ?></td>
-                                                <td><?php echo $row['address']; ?></td>
-                                                <td><?php echo $row['st_telephone']; ?></td>
-                                                <td><?php echo $row['st_email']; ?></td>
-                                                <td><?php echo $row['st_dob']; ?></td>
-                                                <td>
-                                                    <a href="" style="color:blue;"><i class="fas fa-pen"></i></a>
-                                                    <a href="staff-registration.php?idd=<?php echo $row['st_id']; ?>" onclick="return confirm('Are you sure ?')" style="color:red;"><i class="fas fa-remove"></i></a>
-                                                </td>
-                                            </tr>
-                                            <?php 
-										} ?>
-                                </table>
-                            </div>
+                <section class="content">
+                    <br>
+                    <div class="col-md-12 box box-default">
+                        <div class="box-header">
+                            <section class="content-header">
+                                <h1>
+                                    <i class="fa fa-male"></i>
+                                    Staff
+                                </h1>
+                            </section>
                         </div>
-                    </div>
+                        <hr>
 
 
-                    <!-- Delete Query -->
-                    <?php 
-					if (isset($_GET['idd'])) {
-						$idd = $_GET['idd'];
-						$sql = "Delete from staff where st_id='" . $idd . "'";
-						if ($idd != '') {
-							$query = mysqli_query($con, $sql);
-							//header("Refresh:0; url=staff-registration.php");
-						}
-					}
-					?>
+                        <div class="container" id="member-registration-container">
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"><i class="fas fa-plus" style="color: white;"></i> Staff</button>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#userModal"> <i class="fas fa-user" style="color: white;"></i> New User</button>
+                            <br> <br> <br>
 
-                    <!-- session for add member button -->
-                    <?php if (isset($_SESSION["success"])) { ?>
-                    <div class="alert alert-success">
-                        <strong>Success! </strong> <?php echo $_SESSION["success"];
-													session_unset(); ?>
-                    </div>
-                    <?php 
-				} ?>
+                            <!-- Table with query to fill it -->
+                            <?php $sql = 'SELECT st_id,cl_id,u_id,st_first_name,st_middle_name,st_last_name,st_position, st_telephone,address,st_email,st_dob FROM staff';
+                            $query = mysqli_query($con, $sql);
+                            if (!$query) {
+                                die('SQL Error:' . mysqli_error($con));
+                            }
+                            ?>
 
-                    <?php if (isset($_SESSION["error"])) { ?>
-                    <div class="alert alert-danger">
-                        <strong>Alert! </strong> <?php echo $_SESSION["error"];
-													session_unset(); ?>
-                    </div>
-                    <?php 
-				} ?>
-
-
-                    <!-- ADD Staff -->
-                    <div class="modal fade" id="myModal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="card card-register">
-                                    <div class="card-header">Add Staff</div>
-                                    <div class="card-body">
-                                        <form method="post" action="includes/phpScripts.php">
-                                            <div class="form-group">
-                                                <label>First Name</label>
-                                                <input type="text" name="txtFName" placeholder="First Name" id="txtFirstName" class="form-control" required="required">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Middle Name</label>
-                                                <input type="text" name="txtMName" placeholder="Middle Name" id="txtMName" class="form-control" required="required">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" name="txtLName" placeholder="Last Name" id="txtLastName" class="form-control" required="required">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Position</label>
-                                                <select class="form-control" name="cbxPosition" style="height:40px;">
-                                                    <option disabled="disabled" selected="selected">Select Position</option>
-                                                    <option value="Admin">Admin</option>
-                                                    <option value="Reception Manager">Reception Manager</option>
-                                                    <option value="Reception User">Reception User</option>
-                                                    <option value="Sales Manager">Sales Manager</option>
-                                                    <option value="Sales User">Sales User</option>
-                                                    <option value="Personal Trainer Manager">Personal Trainer Manager</option>
-                                                    <option value="Personal Trainer User">Personal Trainer User</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Telephone</label>
-                                                <input type="text" name="txtTelephone" placeholder="Telephone" class="form-control" required="required">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Email</label>
-                                                <input type="email" name="txtEmail" placeholder="Email" class="form-control" required="required">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Date of Birth</label>
-                                                <input type="date" name="dob" placeholder="Date of Birth" class="form-control" required="required">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Addess</label>
-                                                <input type="text" name="txtAddress" placeholder="Address" class="form-control" required="required">
-                                            </div>
+                            <!-- DataTables Example -->
+                            <div class="card mb-3">
+                                <div class="card-header"><i class="fas fa-table"></i> Staff List</div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <!-- Table Column Header -->
+                                                    <th class="sorting_desc">First Name</th>
+                                                    <th class="sorting_desc">Middle Name</th>
+                                                    <th class="sorting_desc">Last Name</th>
+                                                    <th class="sorting_desc">Position</th>
+                                                    <th class="sorting_desc">Address</th>
+                                                    <th class="sorting_desc">Telephone</th>
+                                                    <th class="sorting_desc">Email</th>
+                                                    <th class="sorting_desc">Date of Birth</th>
+                                                    <th class="sorting_desc">Action</th>
+                                                </tr>
+                                                <thead>
+                                                    <?php while ($row = mysqli_fetch_array($query)) { ?>
+                                                        <tr>
+                                                            <td><?php echo $row['st_first_name']; ?></td>
+                                                            <td><?php echo $row['st_middle_name']; ?></td>
+                                                            <td><?php echo $row['st_last_name']; ?></td>
+                                                            <td><?php echo $row['st_position']; ?></td>
+                                                            <td><?php echo $row['address']; ?></td>
+                                                            <td><?php echo $row['st_telephone']; ?></td>
+                                                            <td><?php echo $row['st_email']; ?></td>
+                                                            <td><?php echo $row['st_dob']; ?></td>
+                                                            <td>
+                                                                <a href="" style="color:blue;"><i class="fas fa-pen"></i></a>
+                                                                <a href="staff-registration.php?idd=<?php echo $row['st_id']; ?>" onclick="return confirm('Are you sure ?')" style="color:red;"><i class="fas fa-remove"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php
+                                                } ?>
+                                        </table>
                                     </div>
-                                    <button class="btn btn-danger btn-md" name="btnRegisterStaff">Register Staff</button>
-                                    </form>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="container">
-                    <div class="modal fade" id="userModal" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title" style="color: black;font-size:25px;text-decoration: underline;">User Registration</h4>
+
+                            <!-- Delete Query -->
+                            <?php
+                            if (isset($_GET['idd'])) {
+                                $idd = $_GET['idd'];
+                                $sql = "Delete from staff where st_id='" . $idd . "'";
+                                if ($idd != '') {
+                                    $query = mysqli_query($con, $sql);
+                                    //header("Refresh:0; url=staff-registration.php");
+                                }
+                            }
+                            ?>
+
+                            <!-- session for add member button -->
+                            <?php if (isset($_SESSION["success"])) { ?>
+                                <div class="alert alert-success">
+                                    <strong>Success! </strong> <?php echo $_SESSION["success"];
+                                                                session_unset(); ?>
                                 </div>
-                                <div class="modal-body">
-                                    <form id="user-registration-container" action="includes/phpScripts.php" method="POST">
-                                        <label>Name</label>
-                                        <input type="text" name="txtName" placeholder="Name" id="txtUserName" class="form-control">
-                                        <label>Username</label>
-                                        <input type="text" name="txtUsername" placeholder="Username" class="form-control">
-                                        <label>Password</label>
-                                        <input type="password" name="txtPassword" placeholder="Password" class="form-control">
-                                        <label>User Type</label>
-                                        <input type="text" name="UserType" placeholder="User Type" class="form-control">
-                                        <button class="btn btn-danger btn-md" type="submit" name="btnRegisterUser">Register User</button>
-                                    </form>
+                            <?php
+                        } ?>
+
+                            <?php if (isset($_SESSION["error"])) { ?>
+                                <div class="alert alert-danger">
+                                    <strong>Alert! </strong> <?php echo $_SESSION["error"];
+                                                                session_unset(); ?>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <?php
+                        } ?>
+
+
+                            <!-- ADD Staff -->
+                            <div class="modal fade" id="myModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="card card-register">
+                                            <div class="card-header">Add Staff</div>
+                                            <div class="card-body">
+                                                <form method="post" action="includes/phpScripts.php">
+                                                    <div class="form-group">
+                                                        <input type="text" name="txtFName" placeholder="First Name" id="txtFirstName" class="form-control" required="required">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" name="txtMName" placeholder="Middle Name" id="txtMName" class="form-control" required="required">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" name="txtLName" placeholder="Last Name" id="txtLastName" class="form-control" required="required">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <select class="form-control" name="cbxPosition" style="height:40px;">
+                                                            <option disabled="disabled" selected="selected">Select Position</option>
+                                                            <option value="Admin">Admin</option>
+                                                            <option value="Reception Manager">Reception Manager</option>
+                                                            <option value="Reception User">Reception User</option>
+                                                            <option value="Sales Manager">Sales Manager</option>
+                                                            <option value="Sales User">Sales User</option>
+                                                            <option value="Personal Trainer Manager">Personal Trainer Manager</option>
+                                                            <option value="Personal Trainer User">Personal Trainer User</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" name="txtTelephone" placeholder="Telephone" class="form-control" required="required">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="email" name="txtEmail" placeholder="Email" class="form-control" required="required">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="date" name="dob" placeholder="Date of Birth" class="form-control" required="required">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" name="txtAddress" placeholder="Address" class="form-control" required="required">
+                                                    </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button class="btn btn-primary btn-md" name="btnRegisterStaff">Register Staff</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="modal fade" id="userModal" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" style="color: black;font-size:25px;text-decoration: underline;">User Registration</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="user-registration-container" action="includes/phpScripts.php" method="POST">
+
+                                                <input type="text" name="txtName" placeholder="Name" id="txtUserName" class="form-control">
+                                                <br>
+                                                <input type="text" name="txtUsername" placeholder="Username" class="form-control">
+                                                <br>
+                                                <input type="password" name="txtPassword" placeholder="Password" class="form-control">
+                                                <br>
+                                                <input type="text" name="UserType" placeholder="User Type" class="form-control">
+                                                <br>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary btn-md" type="submit" name="btnRegisterUser">Register User</button>
+
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
-    </div>
 </body>
 
-</html> 
+</html>

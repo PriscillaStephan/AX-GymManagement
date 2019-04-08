@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include 'includes/dbConnection.php';
 if (!$_SESSION["user_name_loggedIn_admin"]) {
@@ -110,12 +110,12 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
     </script>
     <style>
         body {
-            margin-top: 40px;
             font-size: 14px;
             font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
         }
 
         #wrap {
+            display: flex;
             width: 1100px;
             margin: 0 auto;
         }
@@ -125,8 +125,9 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
             width: 150px;
             padding: 0 10px;
             border: 1px solid #ccc;
-            background: #eee;
-            text-align: left;
+            color: white;
+            background: #212529fa;
+            text-align: center;
         }
 
         #external-events h4 {
@@ -137,6 +138,8 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
         #external-events .fc-event {
             margin: 10px 0;
+            background-color: #1db198;
+            border-color: #1db198;
             cursor: pointer;
         }
 
@@ -167,45 +170,50 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
         <div id="content-wrapper">
             <div class="container-fluid">
 
-                <section class="content">
-                    <h1>
-                        <i class="fa fa-plus"></i>
-                        Member Attendance <small>Attendance</small>
-                    </h1>
-                    <hr>
-                </section>
+                <div class="content-wrapper" style="min-height: 1273px !important">
 
+                    <section class="content">
+                        <br>
+                        <div class="col-md-12 box box-default">
+                            <div class="box-header">
+                                <section class="content-header">
+                                    <h1>
+                                        <i class="fa fa-plus"></i>
+                                        Class Schedule
+                                    </h1>
+                                </section>
+                            </div>
+                            <hr>
 
-                <div id='wrap'>
-                    <br><br><br><br>
-                    <div id='external-events'>
-                        <h4>Draggable Events</h4>
+                            <div id='wrap'>
 
-                        <div id='external-events-list'>
-                            <div class='fc-event'>My Event 1</div>
-                            <div class='fc-event'>My Event 2</div>
-                            <div class='fc-event'>My Event 3</div>
-                            <div class='fc-event'>My Event 4</div>
-                            <div class='fc-event'>My Event 5</div>
+                                <div id='external-events'>
+                                    <h4>Draggable Events</h4>
+                                    <div id='external-events-list'>
+                                        <div class='fc-event'>Aerobics Class</div>
+                                        <div class='fc-event'>HIT Class</div>
+                                        <div class='fc-event'>Cardio Class</div>
+                                        <div class='fc-event'>Pilates</div>
+                                        <div class='fc-event'>Zumba Class</div>
+                                    </div>
+
+                                    <p>
+                                        <input type='checkbox' id='drop-remove' />
+                                        <label for='drop-remove'>remove after drop</label>
+                                    </p>
+                                </div>
+
+                                <div id='calendar'></div>
+
+                                <div style='clear:both'></div>
+
+                            </div>
+
                         </div>
-
-                        <p>
-                            <input type='checkbox' id='drop-remove' />
-                            <label for='drop-remove'>remove after drop</label>
-                        </p>
-                    </div>
-
-                    <div id='calendar'></div>
-
-                    <div style='clear:both'></div>
-
                 </div>
-
             </div>
-        </div>
-    </div>
 
 
 </body>
 
-</html> 
+</html>

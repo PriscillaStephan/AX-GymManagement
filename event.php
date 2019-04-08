@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include 'includes/dbConnection.php';
 if (!$_SESSION["user_name_loggedIn_admin"]) {
@@ -30,6 +30,14 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
             max-width: 1140px;
             padding-top: 100px;
         }
+
+        .panel-primary>.panel-heading,
+        .panel-footer {
+            color: #fff;
+            background-color: #1db198;
+            border-color: #1db198;
+        }
+
 
         .event-primary h2 {
             margin-top: 10px
@@ -254,109 +262,168 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
         <div id="content-wrapper">
             <div class="container-fluid">
 
-                <!--https://bootsnipp.com/snippets/xam7z-->
+
+            <section class="content">
+                            <br>
+                            <div class="col-md-12 box box-default">
+                                <div class="box-header">
+                                    <section class="content-header">
+                                        <h1>
+                                            <i class="fa fa-building"></i>
+                                            Events
+                                        </h1>
+                                    </section>
+                                </div>
+                                <hr>
+
+
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-4">
-                            <div class="panel panel-primary event-primary">
-                                <div class="panel-heading">
-                                    <h2><a href="#">Event Name</a></h2>
-                                </div>
-                                <img src="https://placehold.it/400x150" alt="event image" class="img-responsive" />
-                                <div class="row nopadding">
-                                    <div class="col-sm-6 nopadding">
-                                        <time class="start pink">
-                                            Start <span class="day">20</span>
-                                            <span class="month">Apr</span>
-                                            <span class="year">2016</span>
-                                        </time>
+
+
+                                <div class="col-sm-4">
+                                    <div class="panel panel-primary event-primary">
+                                        <div class="panel-heading">
+                                            <h2><a href="#">Marathon Event </a></h2>
+                                        </div>
+                                        <div class="panel-body nopadding">
+                                            <img src="images/marathon.jpg" alt="event image" class="img-responsive" />
+                                            <div class="row nopadding">
+                                                <div class="col-sm-6 nopadding">
+                                                    <time class="start green">
+                                                        Start <span class="day">20</span>
+                                                        <span class="month">Apr</span>
+                                                        <span class="year">2016</span>
+                                                    </time>
+                                                </div>
+                                                <div class="col-sm-6 nopadding">
+                                                    <time class="end orange_red">
+                                                        End <span class="day">20</span>
+                                                        <span class="month">Apr</span>
+                                                        <span class="year">2016</span>
+                                                    </time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer panel-primary" style="background-color: #1db198;">
+                                            <p>Short description of event would go here.
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-6 nopadding">
-                                        <time class="end purple">
-                                            End <span class="day">20</span>
-                                            <span class="month">Apr</span>
-                                            <span class="year">2016</span>
-                                        </time>
+                                </div>
+
+
+
+                                <div class="col-sm-4">
+                                    <div class="panel panel-primary event-primary">
+                                        <div class="panel-heading">
+                                            <h2><a href="#">CrossFit Event </a></h2>
+                                        </div>
+                                        <div class="panel-body nopadding">
+                                            <img src="images/CrossFit.png" alt="event image" class="img-responsive" />
+                                            <div class="row nopadding">
+                                                <div class="col-sm-6 nopadding">
+                                                    <time class="start dkblue">
+                                                        Start <span class="day">05</span>
+                                                        <span class="month">May</span>
+                                                        <span class="year">2017</span>
+                                                    </time>
+                                                </div>
+                                                <div class="col-sm-6 nopadding">
+                                                    <time class="end orange">
+                                                        End <span class="day">05</span>
+                                                        <span class="month">May</span>
+                                                        <span class="year">2017</span>
+                                                    </time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer panel-primary" style="background-color: #1db198;">
+                                            <p>Short description of event would go here.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="panel panel-primary event-primary">
+                                        <div class="panel-heading">
+                                            <h2>Hiking Event</h2>
+                                        </div>
+                                        <div class="panel-body nopadding">
+                                            <img src="images/hiking.jpg" alt="event image" class="img-responsive" />
+                                            <div class="row nopadding">
+                                                <div class="col-sm-6 nopadding">
+                                                    <time class="start green">
+                                                        Start <span class="day">12</span>
+                                                        <span class="month">June</span>
+                                                        <span class="year">2019</span>
+                                                    </time>
+                                                </div>
+                                                <div class="col-sm-6 nopadding">
+                                                    <time class="end orange_red">
+                                                        End <span class="day">16</span>
+                                                        <span class="month">June</span>
+                                                        <span class="year">2019</span>
+                                                    </time>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-footer panel-primary" style="background-color: #1db198;">
+                                            <p>Short description of event would go here.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel-footer panel-primary">
-                                <p>Short description of event would go here.
-                                </p>
-                                <a href="http://ulurudaytours.com.au/" class="btn btn-success">Read more...</a>
-                            </div>
-                        </div>
+
+
+
+
                     </div>
+
                     <div class="col-sm-4">
-                        <div class="panel panel-primary event-primary">
+                        <div class="panel panel-primary event-primary" style="border-color: #1db198;">
                             <div class="panel-heading">
-                                <h2><a href="#">Event Name</a></h2>
+                                <h2>Zumba Event</h2>
                             </div>
                             <div class="panel-body nopadding">
-                                <img src="https://placehold.it/400x150" alt="event image" class="img-responsive" />
+                                <img src="images/Zumba.jpg" alt="event image" class="img-responsive" />
                                 <div class="row nopadding">
                                     <div class="col-sm-6 nopadding">
                                         <time class="start green">
-                                            Start <span class="day">20</span>
-                                            <span class="month">Apr</span>
-                                            <span class="year">2016</span>
+                                            Start <span class="day">18</span>
+                                            <span class="month">October</span>
+                                            <span class="year">2019</span>
                                         </time>
                                     </div>
                                     <div class="col-sm-6 nopadding">
                                         <time class="end orange_red">
                                             End <span class="day">20</span>
-                                            <span class="month">Apr</span>
-                                            <span class="year">2016</span>
+                                            <span class="month">October</span>
+                                            <span class="year">2019</span>
                                         </time>
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel-footer panel-primary">
+                            <div class="panel-footer panel-primary" style="background-color: #1db198;">
                                 <p>Short description of event would go here.
                                 </p>
-                                <a href="http://ulurudaytours.com.au/" class="btn btn-success">Read more...</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="panel panel-primary event-primary">
-                            <div class="panel-heading">
-                                <h2><a href="#">Event Name</a></h2>
-                            </div>
-                            <div class="panel-body nopadding">
-                                <img src="https://placehold.it/400x150" alt="event image" class="img-responsive" />
-                                <div class="row nopadding">
-                                    <div class="col-sm-6 nopadding">
-                                        <time class="start dkblue">
-                                            Start <span class="day">20</span>
-                                            <span class="month">Apr</span>
-                                            <span class="year">2016</span>
-                                        </time>
-                                    </div>
-                                    <div class="col-sm-6 nopadding">
-                                        <time class="end orange">
-                                            End <span class="day">20</span>
-                                            <span class="month">Apr</span>
-                                            <span class="year">2016</span>
-                                        </time>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel-footer panel-primary">
-                                <p>Short description of event would go here.
-                                </p>
-                                <a href="http://ulurudaytours.com.au/" class="btn btn-success">Read more...</a>
-                            </div>
-                        </div>
-                    </div>
+
+
+
+
                 </div>
             </div>
-
         </div>
     </div>
     </div>
 
 
+
 </body>
 
-</html> 
+</html>
