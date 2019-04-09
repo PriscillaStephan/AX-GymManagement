@@ -276,12 +276,8 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                 </div>
                                 <hr>
 
-                                
-
                 <div class="container">
                     <div class="row">
-
-
                                 <div class="col-sm-4">
                                     <div class="panel panel-primary event-primary">
                                         <div class="panel-heading">

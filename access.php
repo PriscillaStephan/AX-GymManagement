@@ -498,8 +498,6 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                     </div>
                 </section>
             </div>
-
-            <br><br><br>
             <div class="control-sidebar-bg">
                 <div class="col-sm-offset-2 col-sm-8 row_bottom">
                     <input type="submit" value="Save Changes" name="save_access_right" style="float:right;" class="btn btn-flat btn-success">
@@ -509,8 +507,6 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
         <script>
 
         </script>
-
-
 
     </div>
     </div>

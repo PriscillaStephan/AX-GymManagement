@@ -88,8 +88,6 @@ if (isset($_POST["btnRegisterUser"])) {
 
 
 /*add club btn*/
-
-
 if (isset($_POST["btnAddClub"])) {
 
 	$Club_Name = $_POST["txtClubName"];
@@ -254,13 +252,21 @@ if (isset($_POST["btnLogin"])) {
 	}
 }
 
-/*subscription from*/ /*
+/*subscription from*/
+
+/*subscription from*/
 if (isset($_POST["btnSaveSub"])) {
-	$Club_Name = $_POST["txtClubName"];
-	$Location = $_POST["txtClubLocation"];
+	$member_name = $_POST["member_name"];
+	$ms_id = $_POST["membership_type"];
+	$sd_starting_date = $_POST["starting-date"];
+	$sd_expiry_date = $_POST["expiry-date"];
+	$price = $_POST["txtMembershipPrice"];
+	$currency = $_POST["txtPriceDiscount"];
+	$discount = $_POST["txtPriceCurrency"];
 
-	$sql = "INSERT INTO subscription() VALUES ('" . $ . "',)";  //(cl_name,cl_location) VALUES ('" . $Club_Name . "','" . $Location . "')";
-
+	$sql = "INSERT INTO subscription_details(member_name,ms_id,sd_starting_date,sd_expiry_date,price,currency,discount) 
+            VALUES (" . $member_name . "', '" . $ms_id . "','" . $sd_starting_date . "',
+              '" . $sd_expiry_date . "','" . $price . "', '" . $currency . "','" . $discount . "',)"; 
 	if ($con->query($sql) === true) {
 		$message = "New record created successfully";
 		$_SESSION["success"] = $message;
@@ -272,7 +278,10 @@ if (isset($_POST["btnSaveSub"])) {
 	}
 
 	$con->close();
+}
 
-}*/
+
+
+
 
 /**calendar */

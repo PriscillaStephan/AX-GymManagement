@@ -144,8 +144,13 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                                             <input type="text" name="txtMdescription" placeholder="Description" class="form-control" required="required">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Membership Type</label>
-                                                            <input type="text" name="txtMtype" placeholder="Type" class="form-control" required="required">
+                                                            <label> Membership Type</label>
+                                                            <select class="form-control" name="cbxPosition" style="height:40px;">
+                                                                <option disabled="disabled" selected="selected">Membership Type</option>
+                                                                <option value="General">General</option>
+                                                                <option value="Activity">Activity</option>
+                                                                <option value="Class">Class</option>
+                                                            </select>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Membership Price</label>

@@ -370,14 +370,13 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                     <div class='form-group'><label class='control-label col-md-2'>Cover Image</label>
                                         <div class='col-md-8'><input type="file" name="cover_image" class="form-control"></div>
                                     </div><input type="hidden" name="old_cover_image" class="form-control" id="" value="cover-image.png" /><img src='/dasinfoau/php/gym/webroot/upload/cover-image.png' style='max-width: 100%;'>
-                                </fieldset><br><br>
-
-
-                                </fieldset><br><br><button class="btn btn-flat btn-success" name="save_setting" type="submit" style="float:right;">Save Settings</button>
+                                </fieldset>
+                                </fieldset>
                             </form>
                         </div>
-
                     </div>
+                    <button class="btn btn-flat btn-success" name="save_setting" type="submit" style="float:right;">Save Settings</button>
+
                 </section>
 
                 <div class="modal fade gym-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">

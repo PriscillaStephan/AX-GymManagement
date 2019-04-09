@@ -46,17 +46,13 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                         </div>
                         <hr>
 
-
-
-
-
                         <div class="container" id="member-registration-container">
                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <i class="fas fa-plus" style="color: white;"></i> Subscription</button>
                             <button type="button" class="btn btn-info"> <i class="fas fa-file-download" style="color: white;"></i> Excel File</button>
                             <br> <br> <br>
 
                             <!-- Table with query to fill it -->
-                            <?php $sql = 'SELECT sub_id,st_id,cl_id,m_id,sub_date FROM subscription';
+                            <?php $sql = 'SELECT sd_id,sub_id,member_id,member_name,ms_id,sc_id,sd_starting_date,sd_expiry_date,price,currency,discount,total FROM subscription_details';
                             $query = mysqli_query($con, $sql);
                             if (!$query) {
                                 die('SQL Error:' . mysqli_error($con));
@@ -72,22 +68,32 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                             <thead>
                                                 <tr>
                                                     <!-- Table Column Header -->
+                                                    <th class="sorting_desc">Member Id</th>
                                                     <th class="sorting_desc">Member Name</th>
                                                     <th class="sorting_desc">Membership</th>
                                                     <th class="sorting_desc">Starting Date</th>
                                                     <th class="sorting_desc">Expiry Date</th>
                                                     <th class="sorting_desc">Price</th>
-                                                    <th class="sorting_desc">Discount</th>
                                                     <th class="sorting_desc">Currency</th>
+                                                    <th class="sorting_desc">Discount</th>
                                                     <th class="sorting_desc">Action</th>
                                                 </tr>
                                             </thead>
                                             <?php while ($row = mysqli_fetch_array($query)) { ?>
                                                 <tr>
-                                                    <td><?php echo $row['']; ?></td>
+                                                    <td><?php echo $row['member_id']; ?></td>
+                                                    <td><?php echo $row['member_name']; ?></td>
+                                                    <td><?php echo $row['ms_id']; ?></td>
+                                                    <td><?php echo $row['sd_starting_date']; ?></td>
+                                                    <td><?php echo $row['sd_expiry_date']; ?></td>
+                                                    <td><?php echo $row['price']; ?></td>
+                                                    <td><?php echo $row['currency']; ?></td>
+                                                    <td><?php echo $row['discount']; ?></td>
+                                                    <td><?php echo $row['total']; ?></td>
+
                                                     <td>
                                                         <a href="" style="color:blue;"><i class="fas fa-pen"></i></a>
-                                                        <a href="subscription.php?idd=<?php echo $row['sub_id']; ?>" onclick="return confirm('Are you sure ?')" style="color:red;"><i class="fas fa-remove"></i></a>
+                                                        <a href="subscription.php?idd=<?php echo $row['sd_id']; ?>" onclick="return confirm('Are you sure ?')" style="color:red;"><i class="fas fa-remove"></i></a>
                                                     </td>
                                                 </tr>
                                             <?php
@@ -102,7 +108,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                         <?php
                         if (isset($_GET['idd'])) {
                             $idd = $_GET['idd'];
-                            $sql = "Delete from subscription where sub_id='" . $idd . "'";
+                            $sql = "Delete from subscription where sd_id='" . $idd . "'";
                             if ($idd != '') {
                                 $query = mysqli_query($con, $sql);
                                 header("Refresh:0; url=subscription.php");
@@ -141,7 +147,8 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                             <form method="post" action="includes/phpScripts.php">
                                 <div class="form-group">
                                     <label>Member Name</label>
-                                    <select class="form-control">
+                                    <select name="member_name" class="form-control">
+                                        <option disabled="disabled" selected="selected">Select Member Name</option>
                                         <?php
                                         $query = "SELECT m_first_name FROM member";
                                         /*  add order by clause to myphp statement if the names are to be displayed in alphabetical order */
@@ -157,18 +164,18 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
                                 <div class="form-group">
                                     <label>Memebrship</label>
-                                    <select class="form-control">
+                                    <select name="membership_type" class="form-control">
                                         <option disabled="disabled" selected="selected">Select Membership</option>
-                                        <option value="membership" selected="selected">Monthly Membership</option>
-                                        <option value="membership" selected="selected">Three Months Membership</option>
-                                        <option value="membership" selected="selected">Six Months Membership</option>
-                                        <option value="Activity" selected="selected">Swimming Activity</option>
-                                        <option value="Activity" selected="selected">Basketball Activity</option>
-                                        <option value="Activity" selected="selected">Football Activity</option>
-                                        <option value="Activity" selected="selected">CLasses</option>
-                                        <option value="Personal-training" selected="selected">Single PT Session</option>
-                                        <option value="Personal-training" selected="selected">10 PT Sessions</option>
-                                        <option value="Personal-training" selected="selected">30 PT Sessions</option>
+                                        <?php
+                                        $query = "SELECT m_first_name FROM member";
+                                        /*  add order by clause to myphp statement if the names are to be displayed in alphabetical order */
+                                        $result = mysql_query($query);
+                                        echo "<option name=member value=''></option>";
+                                        while ($nt = mysql_fetch_array($result)) {
+                                            echo "<option value=$nt'm_first_name'></option>";
+                                        }
+                                        echo "</option>";
+                                        ?>
                                     </select>
                                 </div>
 
@@ -193,6 +200,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                     <label>Currency</label>
                                     <input type="text" name="txtPriceCurrency" placeholder="Currency" class="form-control" required="required">
                                 </div>
+
                                 <div class="modal-footer">
                                     <button class="btn btn-success btn-md" name="btnSaveSub" type="submit" style="float:right;">Save</button>
 
