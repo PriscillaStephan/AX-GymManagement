@@ -32,7 +32,6 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
     <div id="wrapper">
         <div id="content-wrapper">
             <div class="container-fluid">
-
                 <section class="content">
                     <br>
                     <div class="col-md-12 box box-default">
@@ -91,6 +90,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                                     <td><?php echo $row['discount']; ?></td>
                                                     <td><?php echo $row['total']; ?></td>
 
+
                                                     <td>
                                                         <a href="" style="color:blue;"><i class="fas fa-pen"></i></a>
                                                         <a href="subscription.php?idd=<?php echo $row['sd_id']; ?>" onclick="return confirm('Are you sure ?')" style="color:red;"><i class="fas fa-remove"></i></a>
@@ -108,7 +108,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                         <?php
                         if (isset($_GET['idd'])) {
                             $idd = $_GET['idd'];
-                            $sql = "Delete from subscription where sd_id='" . $idd . "'";
+                            $sql = "Delete from subscription_details where sd_id='" . $idd . "'";
                             if ($idd != '') {
                                 $query = mysqli_query($con, $sql);
                                 header("Refresh:0; url=subscription.php");
@@ -149,16 +149,15 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                     <label>Member Name</label>
                                     <select name="member_name" class="form-control">
                                         <option disabled="disabled" selected="selected">Select Member Name</option>
-                                        <?php
-                                        $query = "SELECT m_first_name FROM member";
-                                        /*  add order by clause to myphp statement if the names are to be displayed in alphabetical order */
-                                        $result = mysql_query($query);
-                                        echo "<option name=member value=''></option>";
-                                        while ($nt = mysql_fetch_array($result)) {
-                                            echo "<option value=$nt'm_first_name'></option>";
-                                        }
-                                        echo "</option>";
-                                        ?>
+
+                                        <option> <?php
+                                                    $sql = mysqli_query($con, "SELECT m_first_name FROM member");
+                                                    while ($row = $sql->fetch_assoc()) {
+                                                        echo "<option value=\"owner1\">" . $row['m_first_name'] . "</option>";
+                                                    }
+                                                    ?>
+                                        </option>
+
                                     </select>
                                 </div>
 
@@ -166,16 +165,16 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                     <label>Memebrship</label>
                                     <select name="membership_type" class="form-control">
                                         <option disabled="disabled" selected="selected">Select Membership</option>
-                                        <?php
-                                        $query = "SELECT m_first_name FROM member";
-                                        /*  add order by clause to myphp statement if the names are to be displayed in alphabetical order */
-                                        $result = mysql_query($query);
-                                        echo "<option name=member value=''></option>";
-                                        while ($nt = mysql_fetch_array($result)) {
-                                            echo "<option value=$nt'm_first_name'></option>";
-                                        }
-                                        echo "</option>";
-                                        ?>
+
+                                        <option>
+                                            <?php
+                                            $sql = mysqli_query($con, "SELECT concat(ms_name,'-', ms_price,'$') as name FROM membership");
+                                            while ($row = $sql->fetch_assoc()) {
+                                                echo "<option value=\"owner1\">" . $row['name'] . "</option>";
+                                            }
+                                            ?>
+                                        </option>
+
                                     </select>
                                 </div>
 
@@ -190,7 +189,10 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
                                 <div class="form-group">
                                     <label>Price</label>
+
                                     <input type="text" name="txtMembershipPrice" placeholder="Price" class="form-control" required="required">
+
+
                                 </div>
                                 <div class="form-group">
                                     <label>Discount</label>

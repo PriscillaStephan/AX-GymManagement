@@ -349,200 +349,195 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
         <div id="content-wrapper">
             <div class="container-fluid">
                 <!-- Breadcrumbs-->
-                <ol class="breadcrumb">
-                    <!--<li class="breadcrumb-item">
-                <a href="#">Dashboard</a>
-              </li> -->
-                    <li class="breadcrumb-item active">Overview</li>
-                </ol>
                 <!-- Icon Cards-->
-                <div class="row">
-                    <div class="col-xl-3 col-sm-6 mb-3">
-                        <div class="card text-white bg-primary o-hidden h-100">
-                            <div class="card-body">
-                                <div class="card-body-icon">
-                                    <i class="fas fa-fw fa-comments"></i>
-                                </div>
-                                <div class="mr-5">New Messages!</div>
-                            </div>
-                            <a class="card-footer text-white clearfix small z-1" href="message.php">
-                                <span class="float-left">View Details</span>
-                                <span class="float-right">
-                                    <i class="fas fa-angle-right"></i>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 mb-3">
-                        <div class="card text-white bg-warning o-hidden h-100">
-                            <div class="card-body">
-                                <div class="card-body-icon">
-                                    <i class="fas fa-fw fa-list"></i>
-                                </div>
-                                <div class="mr-5">To Do List!</div>
-                            </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#to_do_list">
-                                <span class="float-left">View Details</span>
-                                <span class="float-right">
-                                    <i class="fas fa-angle-right"></i>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 mb-3">
-                        <div class="card text-white bg-success o-hidden h-100">
-                            <div class="card-body">
-                                <div class="card-body-icon">
-                                    <i class="fas fa-fw fa-user"></i>
-                                </div>
-                                <div class="mr-5"> Active Members</div>
-                            </div>
-                            <a class="card-footer text-white clearfix small z-1" href="member.php">
-                                <span class="float-left">View Details</span>
-                                <span class="float-right">
-                                    <i class="fas fa-angle-right"></i>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 mb-3">
-                        <div class="card text-white bg-danger o-hidden h-100">
-                            <div class="card-body">
-                                <div class="card-body-icon">
-                                    <i class="fas fa-fw fa-exclamation-circle"></i>
-                                </div>
-                                <div class="mr-5"> Expired Memberships</div>
-                            </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#">
-                                <span class="float-left">View Details</span>
-                                <span class="float-right">
-                                    <i class="fas fa-angle-right"></i>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Area Chart Example-->
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <i class="fas fa-chart-area"></i>
-                        Daily Subscription Chart
-                    </div>
-                    <div class="card-body">
-                        <canvas id="myAreaChart" width="100%" height="30"></canvas>
-                    </div>
-                    <div class="card-footer small text-muted">Updated
-                    </div>
-                </div>
-                <!-- Area Chart Example-->
-                <div class="card mb-3">
+                <div class="container" style="margin-top:80px;">
                     <div class="row">
-                        <div class="col-lg-8">
-                            <div class="card mb-3">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-bar"></i>
-                                    Monthly Payments Bar Chart
-                                </div>
+                        <div class="col-xl-3 col-sm-6 mb-3">
+                            <div class="card text-white bg-primary o-hidden h-100">
                                 <div class="card-body">
-                                    <canvas id="myBarChart" width="100%" height="50"></canvas>
+                                    <div class="card-body-icon">
+                                        <i class="fas fa-fw fa-comments"></i>
+                                    </div>
+                                    <div class="mr-5">New Messages!</div>
                                 </div>
-                                <div class="card-footer small text-muted">Updated</div>
+                                <a class="card-footer text-white clearfix small z-1" href="message.php">
+                                    <span class="float-left">View Details</span>
+                                    <span class="float-right">
+                                        <i class="fas fa-angle-right"></i>
+                                    </span>
+                                </a>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="card mb-3">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-pie"></i>
-                                    Membership types Chart </div>
+                        <div class="col-xl-3 col-sm-6 mb-3">
+                            <div class="card text-white bg-warning o-hidden h-100">
                                 <div class="card-body">
-                                    <canvas id="myPieChart" width="100%" height="100"></canvas>
+                                    <div class="card-body-icon">
+                                        <i class="fas fa-fw fa-list"></i>
+                                    </div>
+                                    <div class="mr-5">To Do List!</div>
                                 </div>
-                                <div class="card-footer small text-muted">Updated</div>
+                                <a class="card-footer text-white clearfix small z-1" href="#to_do_list">
+                                    <span class="float-left">View Details</span>
+                                    <span class="float-right">
+                                        <i class="fas fa-angle-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 mb-3">
+                            <div class="card text-white bg-success o-hidden h-100">
+                                <div class="card-body">
+                                    <div class="card-body-icon">
+                                        <i class="fas fa-fw fa-user"></i>
+                                    </div>
+                                    <div class="mr-5"> Active Members</div>
+                                </div>
+                                <a class="card-footer text-white clearfix small z-1" href="member.php">
+                                    <span class="float-left">View Details</span>
+                                    <span class="float-right">
+                                        <i class="fas fa-angle-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 mb-3">
+                            <div class="card text-white bg-danger o-hidden h-100">
+                                <div class="card-body">
+                                    <div class="card-body-icon">
+                                        <i class="fas fa-fw fa-exclamation-circle"></i>
+                                    </div>
+                                    <div class="mr-5"> Expired Memberships</div>
+                                </div>
+                                <a class="card-footer text-white clearfix small z-1" href="#">
+                                    <span class="float-left">View Details</span>
+                                    <span class="float-right">
+                                        <i class="fas fa-angle-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Area Chart Example-->
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <i class="fas fa-chart-area"></i>
+                            Daily Subscription Chart
+                        </div>
+                        <div class="card-body">
+                            <canvas id="myAreaChart" width="100%" height="30"></canvas>
+                        </div>
+                        <div class="card-footer small text-muted">Updated
+                        </div>
+                    </div>
+                    <!-- Area Chart Example-->
+                    <div class="card mb-3">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar"></i>
+                                        Monthly Payments Bar Chart
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="myBarChart" width="100%" height="50"></canvas>
+                                    </div>
+                                    <div class="card-footer small text-muted">Updated</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-pie"></i>
+                                        Membership types Chart </div>
+                                    <div class="card-body">
+                                        <canvas id="myPieChart" width="100%" height="100"></canvas>
+                                    </div>
+                                    <div class="card-footer small text-muted">Updated</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!------------------------------To Do List----------------------------------------------------->
-            <!-- main body -->
-            <div id="to_do_list">
-                <div class="ful">
-                    <div class="center_block container">
+                <!------------------------------To Do List----------------------------------------------------->
+                <!-- main body -->
+                <div id="to_do_list">
+                    <div class="ful">
+                        <div class="center_block container">
 
-                        <!-- head -->
-                        <div class="ful center_text container_head"> Weekly List</div>
+                            <!-- head -->
+                            <div class="ful center_text container_head"> Weekly List</div>
 
-                        <!-- Columns -->
-                        <div class="ful max">
-                            <div class="fourth column pillers left all_col" id="all">
-                                <div class="ful center_text list_head">Tasks</div>
-                                <div class="tasks ful"></div>
-                                <!-- 	Tamplate -->
-                                <div class="left dragable temp hide task-unit ">
-                                    <div class="ful info">
-                                        <input id="TaskHeading" type="text" class="readonly" readonly placeholder="Title">
-                                        <textarea id="task-discription" readonly class="readonly" placeholder="Description"></textarea>
-                                    </div>
-                                    <div class="ful action_bar">
-                                        <span class="time"><i class="icon-time"></i><span>&nbsp;</span></span>
-                                        <a class="right remove" href="#" title="delete"><i class="icon-remove"></i> </a>
-                                        <a class="right edit" href="#" title="edit"><i class="icon-edit"></i></a>
-                                    </div>
-                                    <div class="progress"></div>
-                                </div>
-
-                                <div class="left temp_box">
-                                    <div class="ful center_text temp_head">Temp Box</div>
-                                </div>
-
-                                <!-- add new task -->
-                                <div class="left create_task_box">
-                                    <div class="ful info">
-                                        <p>Add New Task:</p>
-                                        <div class="ful relative info_val">
-                                            <input id="title" type="text" name="title" required>
-                                            <label class="input_label titl" for="title">Title </label>
+                            <!-- Columns -->
+                            <div class="ful max">
+                                <div class="fourth column pillers left all_col" id="all">
+                                    <div class="ful center_text list_head">Tasks</div>
+                                    <div class="tasks ful"></div>
+                                    <!-- 	Tamplate -->
+                                    <div class="left dragable temp hide task-unit ">
+                                        <div class="ful info">
+                                            <input id="TaskHeading" type="text" class="readonly" readonly placeholder="Title">
+                                            <textarea id="task-discription" readonly class="readonly" placeholder="Description"></textarea>
                                         </div>
-                                        <div class="ful relative info_val">
-                                            <textarea name="discription" id="discription" required></textarea>
-                                            <label class="input_label disc" for="discription">Description</label>
+                                        <div class="ful action_bar">
+                                            <span class="time"><i class="icon-time"></i><span>&nbsp;</span></span>
+                                            <a class="right remove" href="#" title="delete"><i class="icon-remove"></i> </a>
+                                            <a class="right edit" href="#" title="edit"><i class="icon-edit"></i></a>
                                         </div>
-
+                                        <div class="progress"></div>
                                     </div>
-                                    <div class="ful action_bar">
-                                        <div class="right add_task_button">Add Task</div>
+
+                                    <div class="left temp_box">
+                                        <div class="ful center_text temp_head">Temp Box</div>
+                                    </div>
+
+                                    <!-- add new task -->
+                                    <div class="left create_task_box">
+                                        <div class="ful info">
+                                            <p>Add New Task:</p>
+                                            <div class="ful relative info_val">
+                                                <input id="title" type="text" name="title" required>
+                                                <label class="input_label titl" for="title">Title </label>
+                                            </div>
+                                            <div class="ful relative info_val">
+                                                <textarea name="discription" id="discription" required></textarea>
+                                                <label class="input_label disc" for="discription">Description</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="ful action_bar">
+                                            <div class="right add_task_button">Add Task</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="fourth column pillers left to_do_col" id="todo">
-                                <div class="ful center_text list_head">New Tasks</div>
-                                <div class="tasks ful"></div>
-                            </div>
+                                <div class="fourth column pillers left to_do_col" id="todo">
+                                    <div class="ful center_text list_head">New Tasks</div>
+                                    <div class="tasks ful"></div>
+                                </div>
 
-                            <div class="fourth column pillers left  progress_col" id="progress">
-                                <div class="ful center_text list_head">In Progress</div>
-                                <div class="tasks ful"></div>
-                            </div>
+                                <div class="fourth column pillers left  progress_col" id="progress">
+                                    <div class="ful center_text list_head">In Progress</div>
+                                    <div class="tasks ful"></div>
+                                </div>
 
-                            <div class="fourth column pillers left complet_col" id="complete">
-                                <div class="ful center_text list_head">Completed Tasks</div>
-                                <div class="tasks ful"></div>
+                                <div class="fourth column pillers left complet_col" id="complete">
+                                    <div class="ful center_text list_head">Completed Tasks</div>
+                                    <div class="tasks ful"></div>
+                                </div>
+
                             </div>
 
                         </div>
-
                     </div>
                 </div>
+
+
+                <!---------------------------------------------------------------------------------------->
+
             </div>
-
-
-            <!---------------------------------------------------------------------------------------->
-
-
         </div>
 
 

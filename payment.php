@@ -54,7 +54,7 @@ $row = mysqli_fetch_array($query);
 
 						<div class="container" id="member-registration-container">
 							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <i class="fas fa-plus" style="color: white;"></i> Payment</button>
-							<a href="invoice.php" target="_blank"> <button type="button" class="btn btn-info"><i class="fas fa-file-download" style="color: white;"></i> Print Invoice</button> </a>
+							<a href="invoice-print.php" target="_blank"> <button type="button" class="btn btn-info"><i class="fas fa-file-download" style="color: white;"></i> Print Invoice</button> </a>
 							<a href="invoice.php" target="_blank"> <button type="button" class="btn btn-info"><i class="fas fa-list" style="color: white;"></i> Preview</button> </a>
 							<br> <br> <br>
 
