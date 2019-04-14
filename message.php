@@ -114,7 +114,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                             </div>
 
                                         </form>
-<br><br>
+                                        <br><br>
 
                                     </div>
                                 </div>
@@ -126,10 +126,20 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                         <div class="form-group">
                             <div class="col-md-10">
                                 <div class="pull-right">
-                                    <input type="submit" value="Send Message" name="save_message" class="btn btn-flat btn-success">
+                                    <input type="submit" " onclick=" return confirm('Confirm sending message ?')" value="Send Message" name="save_message" class="btn btn-flat btn-success">
                                 </div>
                             </div>
                         </div>
+
+                        <!-- session for add member button -->
+                        <?php if (isset($_SESSION["success"])) { ?>
+                            <div class="alert alert-success">
+                                <strong>Success! </strong> <?php echo $_SESSION["success"];
+                                                            session_unset(); ?>
+                            </div>
+                        <?php
+                    } ?>
+
                     </section>
 
                 </div>

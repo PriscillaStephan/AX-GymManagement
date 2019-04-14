@@ -45,7 +45,6 @@ include 'includes/dbConnection.php';
 
 						<div class="container" id="member-registration-container">
 							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"><i class="fas fa-plus" style="color: white;"></i> Club</button>
-							<button type="button" class="btn btn-info"><i class="fas fa-file-download" style="color: white;"></i> Excel File</button>
 							<br> <br> <br>
 
 							<!-- Table with query to fill it -->

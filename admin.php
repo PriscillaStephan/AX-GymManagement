@@ -15,9 +15,5 @@
 	<body id="page-top" class="fixed-nav">
 
 		<?php include 'navigations/NavigationBar.php'; ?>
-
-
-		
-	
 	</body>
 </html>

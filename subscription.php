@@ -1,7 +1,6 @@
 <?php
 session_start();
 include 'includes/dbConnection.php';
-
 if (!$_SESSION["user_name_loggedIn_admin"]) {
     $_SESSION["expired_session"] = "Your session has been expired, relog in!";
     header("Location: index.php");
@@ -47,7 +46,6 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
                         <div class="container" id="member-registration-container">
                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"> <i class="fas fa-plus" style="color: white;"></i> Subscription</button>
-                            <button type="button" class="btn btn-info"> <i class="fas fa-file-download" style="color: white;"></i> Excel File</button>
                             <br> <br> <br>
 
                             <!-- Table with query to fill it -->
@@ -111,7 +109,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                             $sql = "Delete from subscription_details where sd_id='" . $idd . "'";
                             if ($idd != '') {
                                 $query = mysqli_query($con, $sql);
-                                header("Refresh:0; url=subscription.php");
+                                //  header("Refresh:0; url=subscription.php");
                             }
                         }
                         ?>
@@ -119,7 +117,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
             </div>
         </div>
 
-        <!-- session for add member button -->
+        <!-- session for add subscription button -->
         <?php if (isset($_SESSION["success"])) { ?>
             <div class="alert alert-success">
                 <strong>Success!</strong>
@@ -149,14 +147,13 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                     <label>Member Name</label>
                                     <select name="member_name" class="form-control">
                                         <option disabled="disabled" selected="selected">Select Member Name</option>
+                                        <?php
+                                        $sql = mysqli_query($con, "SELECT m_first_name FROM member");
+                                        while ($row = $sql->fetch_assoc()) {
+                                            echo "<option value=\"owner1\">" . $row['m_first_name'] . "</option>";
+                                        }
+                                        ?>
 
-                                        <option> <?php
-                                                    $sql = mysqli_query($con, "SELECT m_first_name FROM member");
-                                                    while ($row = $sql->fetch_assoc()) {
-                                                        echo "<option value=\"owner1\">" . $row['m_first_name'] . "</option>";
-                                                    }
-                                                    ?>
-                                        </option>
 
                                     </select>
                                 </div>
@@ -166,14 +163,12 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                     <select name="membership_type" class="form-control">
                                         <option disabled="disabled" selected="selected">Select Membership</option>
 
-                                        <option>
-                                            <?php
-                                            $sql = mysqli_query($con, "SELECT concat(ms_name,'-', ms_price,'$') as name FROM membership");
-                                            while ($row = $sql->fetch_assoc()) {
-                                                echo "<option value=\"owner1\">" . $row['name'] . "</option>";
-                                            }
-                                            ?>
-                                        </option>
+                                        <?php
+                                        $sql = mysqli_query($con, "SELECT concat(ms_name,'-', ms_price,'$') as name FROM membership");
+                                        while ($row = $sql->fetch_assoc()) {
+                                            echo "<option value=\"owner1\">" . $row['name'] . "</option>";
+                                        }
+                                        ?>
 
                                     </select>
                                 </div>
@@ -181,10 +176,6 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                 <div class="form-group">
                                     <label>Starting Date</label>
                                     <input type="Date" name="starting-date" placeholder="Starting date" class="form-control" required="required">
-                                </div>
-                                <div class="form-group">
-                                    <label>Exipry Date</label>
-                                    <input type="Date" name="expiry-date" placeholder="Expiry date" class="form-control" required="required">
                                 </div>
 
                                 <div class="form-group">
@@ -197,10 +188,6 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                 <div class="form-group">
                                     <label>Discount</label>
                                     <input type="text" name="txtPriceDiscount" placeholder="Discount" class="form-control" required="required">
-                                </div>
-                                <div class="form-group">
-                                    <label>Currency</label>
-                                    <input type="text" name="txtPriceCurrency" placeholder="Currency" class="form-control" required="required">
                                 </div>
 
                                 <div class="modal-footer">

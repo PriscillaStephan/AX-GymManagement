@@ -203,6 +203,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
             font-size: 13px;
             color: #666;
             padding: 3px;
+            padding-top: 10px;
             webkit-transition: all ease-in-out 300ms;
             -moz-transition: all ease-in-out 300ms;
             -o-transition: all ease-in-out 300ms;
@@ -214,6 +215,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
             border: 1px solid #cdcdcd;
             padding: 10px 3px;
             width: 95%;
+            padding-top: 40px;
             box-shadow: none !important;
         }
 
@@ -388,11 +390,11 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                             <div class="card text-white bg-success o-hidden h-100">
                                 <div class="card-body">
                                     <div class="card-body-icon">
-                                        <i class="fas fa-fw fa-user"></i>
+                                        <i class="fas fa-fw fa-calendar-check-o"></i>
                                     </div>
-                                    <div class="mr-5"> Active Members</div>
+                                    <div class="mr-5"> Events </div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1" href="member.php">
+                                <a class="card-footer text-white clearfix small z-1" href="event.php">
                                     <span class="float-left">View Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -404,11 +406,11 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                             <div class="card text-white bg-danger o-hidden h-100">
                                 <div class="card-body">
                                     <div class="card-body-icon">
-                                        <i class="fas fa-fw fa-exclamation-circle"></i>
+                                        <i class="fas fa-fw fa-music"></i>
                                     </div>
-                                    <div class="mr-5"> Expired Memberships</div>
+                                    <div class="mr-5"> Music System </div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1" href="#">
+                                <a class="card-footer text-white clearfix small z-1" href="https://musicwaveproject.000webhostapp.com/top.html" target="_blank">
                                     <span class="float-left">View Details</span>
                                     <span class="float-right">
                                         <i class="fas fa-angle-right"></i>
@@ -539,11 +541,6 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
             </div>
         </div>
-
-
-
-
-
 
 
 

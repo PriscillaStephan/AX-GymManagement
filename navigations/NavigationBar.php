@@ -115,11 +115,11 @@
                 <i class="fas fa-fw fa fa-hourglass-1"></i>
                 <span>Class Schedule</span></a>
         </li>
-        <li class="nav-item">
+        <!--  <li class="nav-item">
             <a class="nav-link" href="attendance.php">
                 <i class="fas fa fa-group"></i>
                 <span>Attendance</span></a>
-        </li>
+        </li>-->
         <li class="nav-item">
             <a class="nav-link" href="event.php">
                 <i class="fas fa-fw fa-calendar-check-o"></i>

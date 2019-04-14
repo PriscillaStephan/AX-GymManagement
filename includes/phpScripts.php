@@ -112,8 +112,6 @@ if (isset($_POST["btnAddClub"])) {
 /*payment form*/
 
 /*btnSavePrint*/
-
-
 if (isset($_POST["btnSavePrint"])) {
 	$Methode_of_Payment = $_POST["cbxMethodeOfPayment"];
 	$Payment_Date = $_POST["pDate"];
@@ -191,12 +189,7 @@ if (isset($_POST["btnNew"])) {
 
 	$con->close();
 }
-/*btn print*/
-/*btn refund*/
 
-/*membership*/
-/*btn new*/
-/*btn show price*/
 
 /*btnAddMS*/
 if (isset($_POST["btnAddMS"])) {
@@ -219,7 +212,6 @@ if (isset($_POST["btnAddMS"])) {
 
 	$con->close();
 }
-
 
 /* btn login*/
 
@@ -252,7 +244,7 @@ if (isset($_POST["btnLogin"])) {
 	}
 }
 
-/*subscription from*/
+
 
 /*subscription from*/
 if (isset($_POST["btnSaveSub"])) {

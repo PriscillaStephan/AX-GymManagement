@@ -7,7 +7,6 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
     header("Location: index.php");
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -63,12 +62,14 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
                         <div id="reports-table">
 
-                            <!------------------------------------members reports-------------------------------------->
-                            <div id="memberreport">
-                                <!-- Table with query to fill it -->
-                                <?php $sql = 'SELECT m_id,m_first_name,m_middle_name,m_last_name,m_address,m_telephone,email,m_dob,date_created,created_by,updated_date,modified_by FROM member';
-                                $query = mysqli_query($con, $sql);
+                            <!------------------------------------staff reports-------------------------------------->
 
+
+                            <div id="staffreport">
+
+                                <!-- Table with query to fill it -->
+                                <?php $sql = 'SELECT st_id,cl_id,u_id,st_first_name,st_middle_name,st_last_name,st_position, st_telephone,address,st_email,st_dob,date_created,created_by,updated_date,updated_by FROM staff';
+                                $query = mysqli_query($con, $sql);
                                 if (!$query) {
                                     die('SQL Error:' . mysqli_error($con));
                                 }
@@ -76,58 +77,63 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
                                 <!-- DataTables Example -->
                                 <div class="card mb-3">
-                                    <div class="card-header"><i class="fas fa-table"></i> Members Report</div>
+                                    <div class="card-header"><i class="fas fa-table"></i> Staff List</div>
                                     <div class="card-body">
                                         <div class="table-responsive">
                                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                 <thead>
                                                     <tr>
                                                         <!-- Table Column Header -->
-                                                        <th class="sorting_desc">Id</th>
                                                         <th class="sorting_desc">First Name</th>
+                                                        <th class="sorting_desc">Middle Name</th>
                                                         <th class="sorting_desc">Last Name</th>
+                                                        <th class="sorting_desc">Position</th>
+                                                        <th class="sorting_desc">Address</th>
                                                         <th class="sorting_desc">Telephone</th>
+                                                        <th class="sorting_desc">Email</th>
+                                                        <th class="sorting_desc">Date of Birth</th>
                                                         <th class="sorting_desc">date_created</th>
                                                         <th class="sorting_desc">created_by</th>
                                                         <th class="sorting_desc">updated_date</th>
                                                         <th class="sorting_desc">modified_by</th>
                                                     </tr>
-                                                </thead>
-
-                                                <?php while ($row = mysqli_fetch_array($query)) { ?>
-                                                    <tr>
-                                                        <td><?php echo $row['m_id']; ?></td>
-                                                        <td><?php echo $row['m_first_name']; ?></td>
-                                                        <td><?php echo $row['m_last_name']; ?></td>
-                                                        <td><?php echo $row['m_telephone']; ?></td>
-                                                        <td><?php echo $row['date_created']; ?></td>
-                                                        <td><?php echo $row['created_by']; ?></td>
-                                                        <td><?php echo $row['updated_date']; ?></td>
-                                                        <td><?php echo $row['modified_by']; ?></td>
-
-                                                    </tr>
-                                                <?php
-                                            } ?>
+                                                    <thead>
+                                                        <?php while ($row = mysqli_fetch_array($query)) { ?>
+                                                            <tr>
+                                                                <td><?php echo $row['st_first_name']; ?></td>
+                                                                <td><?php echo $row['st_middle_name']; ?></td>
+                                                                <td><?php echo $row['st_last_name']; ?></td>
+                                                                <td><?php echo $row['st_position']; ?></td>
+                                                                <td><?php echo $row['address']; ?></td>
+                                                                <td><?php echo $row['st_telephone']; ?></td>
+                                                                <td><?php echo $row['st_email']; ?></td>
+                                                                <td><?php echo $row['st_dob']; ?></td>
+                                                                <td><?php echo $row['date_created']; ?></td>
+                                                                <td><?php echo $row['created_by']; ?></td>
+                                                                <td><?php echo $row['updated_date']; ?></td>
+                                                                <td><?php echo $row['updated_by']; ?></td>
+                                                            </tr>
+                                                        <?php
+                                                    } ?>
                                             </table>
                                         </div>
                                     </div>
-
-
-
                                 </div>
-                            </div>
 
+
+
+
+                            </div>
                         </div>
 
-
                 </div>
+
 
                 </section>
             </div>
         </div>
     </div>
     </div>
-
 </body>
 
 </html>

@@ -88,11 +88,11 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
             var calendarEl = document.getElementById('calendar');
             var calendar = new Calendar(calendarEl, {
-                plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
+                plugins: ['dayGrid', 'interaction', 'timeGrid', 'list'],
                 header: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                    right: 'timeGridWeek,timeGridDay,listWeek'
                 },
                 editable: true,
                 droppable: true, // this allows things to be dropped onto the calendar

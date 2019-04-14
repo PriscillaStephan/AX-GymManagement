@@ -49,7 +49,6 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
 
                         <div class="container" id="member-registration-container">
                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"><i class="fas fa-plus" style="color: white;"></i> Member</button>
-                            <button type="button" class="btn btn-info"><i class="fas fa-file-download" style="color: white;"></i> Excel File</button>
                         </div>
 
                         <!-- Table with query to fill it -->
@@ -121,6 +120,7 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                 </div>
                             <?php
                         } ?>
+
 
                             <?php if (isset($_SESSION["error"])) { ?>
                                 <div class="alert alert-danger">

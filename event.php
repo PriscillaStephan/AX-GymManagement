@@ -263,21 +263,24 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
             <div class="container-fluid">
 
 
-            <section class="content">
-                            <br>
-                            <div class="col-md-12 box box-default">
-                                <div class="box-header">
-                                    <section class="content-header">
-                                        <h1>
-                                            <i class="fa fa-building"></i>
-                                            Events
-                                        </h1>
-                                    </section>
-                                </div>
-                                <hr>
+                <section class="content">
+                    <br>
+                    <div class="col-md-12 box box-default">
+                        <div class="box-header">
+                            <section class="content-header">
+                                <h1>
+                                    <i class="fa fa-building"></i>
+                                    Events
+                                </h1>
+                            </section>
+                        </div>
+                        <hr>
+                        <button type="button" class="btn btn-info" data-toggle="modal" style="float:right;" data-target="#myModal"><i class="fas fa-plus" style="color: white;"></i> Event</button>
 
-                <div class="container">
-                    <div class="row">
+
+                        <div class="container">
+
+                            <div class="row">
                                 <div class="col-sm-4">
                                     <div class="panel panel-primary event-primary">
                                         <div class="panel-heading">
@@ -373,47 +376,43 @@ if (!$_SESSION["user_name_loggedIn_admin"]) {
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-
-
-
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="panel panel-primary event-primary" style="border-color: #1db198;">
-                            <div class="panel-heading">
-                                <h2>Zumba Event</h2>
-                            </div>
-                            <div class="panel-body nopadding">
-                                <img src="images/Zumba.jpg" alt="event image" class="img-responsive" />
-                                <div class="row nopadding">
-                                    <div class="col-sm-6 nopadding">
-                                        <time class="start green">
-                                            Start <span class="day">18</span>
-                                            <span class="month">October</span>
-                                            <span class="year">2019</span>
-                                        </time>
-                                    </div>
-                                    <div class="col-sm-6 nopadding">
-                                        <time class="end orange_red">
-                                            End <span class="day">20</span>
-                                            <span class="month">October</span>
-                                            <span class="year">2019</span>
-                                        </time>
+                        <div class="col-sm-4">
+                            <div class="panel panel-primary event-primary" style="border-color: #1db198;">
+                                <div class="panel-heading">
+                                    <h2>Zumba Event</h2>
+                                </div>
+                                <div class="panel-body nopadding">
+                                    <img src="images/Zumba.jpg" alt="event image" class="img-responsive" />
+                                    <div class="row nopadding">
+                                        <div class="col-sm-6 nopadding">
+                                            <time class="start green">
+                                                Start <span class="day">18</span>
+                                                <span class="month">October</span>
+                                                <span class="year">2019</span>
+                                            </time>
+                                        </div>
+                                        <div class="col-sm-6 nopadding">
+                                            <time class="end orange_red">
+                                                End <span class="day">20</span>
+                                                <span class="month">October</span>
+                                                <span class="year">2019</span>
+                                            </time>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="panel-footer panel-primary" style="background-color: #1db198;">
-                                <p>Short description of event would go here.
-                                </p>
+                                <div class="panel-footer panel-primary" style="background-color: #1db198;">
+                                    <p>Short description of event would go here.
+                                    </p>
+                                </div>
                             </div>
                         </div>
+
+
+
+
                     </div>
-
-
-
-
-                </div>
             </div>
         </div>
     </div>
